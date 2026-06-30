@@ -466,7 +466,7 @@
       init();
 
       function init() {
-        fetch('./content.json')
+        fetch('./content.json' + '?t=' + Date.now())
           .then(function(response) {
             if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + response.statusText);
             return response.json();
