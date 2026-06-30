@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Золотой телец — комплексные потолочные системы и профессиональное освещение</title>
+  <meta name="description" content="Комплексные потолочные системы и профессиональное освещение для коммерческих и жилых объектов. Грильято, кубообразная рейка, панели Аквастил, свет под ключ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#F5F0E9',
+              100: '#EDE5D8',
+              200: '#D8C8C2',
+              300: '#C8B8A8',
+              400: '#B8A898',
+              500: '#E0C68F',
+              600: '#3C5D70',
+              700: '#112250',
+              800: '#0C1A3E',
+              900: '#08122A',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, ::before, ::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .scrollbar-none::-webkit-scrollbar { display: none; }
+    .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+
+    .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+    .animate-fade-in-scale { animation: fadeInScale 0.4s ease-out forwards; }
+    .animate-spin { animation: spin 0.8s linear infinite; }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    .stagger-1 { animation-delay: 0.05s; }
+    .stagger-2 { animation-delay: 0.1s; }
+    .stagger-3 { animation-delay: 0.15s; }
+    .stagger-4 { animation-delay: 0.2s; }
+
+    .tab-btn { position: relative; transition: color 0.25s ease; cursor: pointer; user-select: none; white-space: nowrap; }
+    .tab-btn::after { content: ''; position: absolute; bottom: -1px; left: 50%; width: 0; height: 2.5px; background: linear-gradient(90deg, #E0C68F, #3C5D70); border-radius: 2px; transition: all 0.3s ease; transform: translateX(-50%); }
+    .tab-btn:hover::after,
+    .tab-btn.active::after { width: 70%; }
+    .tab-btn:focus-visible { outline: 2px solid #3C5D70; outline-offset: 2px; border-radius: 4px; }
+
+    .product-card { transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease; position: relative; }
+    .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E0C68F, #3C5D70, #E0C68F); opacity: 0; transition: opacity 0.3s ease; }
+    .product-card:hover::before { opacity: 1; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.12); }
+    .product-card .img-wrapper { overflow: hidden; position: relative; }
+    .product-card .img-wrapper::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.03)); pointer-events: none; }
+    .product-card img { transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .product-card:hover img { transform: scale(1.08); }
+
+    input, select, textarea { transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; }
+    input:focus, select:focus, textarea:focus { border-color: #3C5D70; box-shadow: 0 0 0 4px rgba(60, 93, 112, 0.12), 0 1px 2px rgba(0,0,0,0.02); outline: none; background-color: white; }
+    .modal-overlay { transition: opacity 0.3s ease; }
+    .modal-content { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease; }
+    #product-modal .modal-content { max-height: 90vh; overflow-y: auto; }
+    #product-modal .modal-content::-webkit-scrollbar { width: 6px; }
+    #product-modal .modal-content::-webkit-scrollbar-track { background: transparent; }
+    #product-modal .modal-content::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+
+    .loader { border: 3px solid rgba(60, 93, 112, 0.15); border-top-color: #3C5D70; border-radius: 50%; width: 40px; height: 40px; animation: spin 0.8s linear infinite; }
+
+    .brand-gradient { background: linear-gradient(135deg, #E0C68F, #3C5D70, #112250); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .brand-border-gradient { border-image: linear-gradient(135deg, #E0C68F, #3C5D70) 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#F5F0E9] text-[#112250] font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- ===== LOADING OVERLAY ===== -->
+  <div id="loading-overlay" class="fixed inset-0 z-[100] bg-[#F5F0E9] flex flex-col items-center justify-center gap-4" role="status" aria-label="Загрузка">
+    <div class="loader"></div>
+    <p class="text-gray-500 text-sm font-medium">Загрузка данных...</p>
+  </div>
+
+  <!-- ===== ERROR OVERLAY ===== -->
+  <div id="error-overlay" class="fixed inset-0 z-[100] bg-[#F5F0E9] hidden flex-col items-center justify-center p-6" role="alert">
+    <div class="max-w-md text-center">
+      <i data-lucide="alert-triangle" class="w-16 h-16 mx-auto mb-4 text-red-400"></i>
+      <h2 class="text-2xl font-bold text-[#112250] mb-3">Не удалось загрузить данные</h2>
+      <p id="error-message" class="text-gray-500 mb-6 leading-relaxed">Пожалуйста, проверьте соединение и обновите страницу.</p>
+      <button onclick="location.reload()" class="inline-flex items-center gap-2 px-6 py-3 bg-[#112250] text-white rounded-lg hover:bg-gray-800 transition-colors font-medium">
+        <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+        Обновить страницу
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== SUCCESS MODAL ===== -->
+  <div id="success-modal" class="fixed inset-0 z-[90] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-overlay absolute inset-0 bg-black/30 backdrop-blur-md" onclick="hideModal()"></div>
+    <div class="modal-content relative bg-white rounded-3xl shadow-2xl shadow-black/10 max-w-md w-full p-8 sm:p-10 text-center">
+      <div class="w-20 h-20 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-500/10">
+        <i data-lucide="check-circle" class="w-11 h-11 text-emerald-500"></i>
+      </div>
+      <h3 id="modal-title" class="text-xl font-bold text-[#112250] mb-3">Заявка успешно принята!</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-8">Наш менеджер свяжется с вами в ближайшее время для уточнения деталей.</p>
+      <button onclick="hideModal()" class="px-8 py-3 bg-gradient-to-r from-[#112250] to-gray-800 text-white rounded-xl hover:from-gray-800 hover:to-gray-900 transition-all font-semibold text-sm shadow-lg shadow-gray-900/10">
+        Закрыть
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== PRODUCT DETAIL MODAL ===== -->
+  <div id="product-modal" class="fixed inset-0 z-[95] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+    <div class="modal-overlay absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeProductModal()"></div>
+    <div class="modal-content relative bg-white rounded-3xl shadow-2xl shadow-black/15 max-w-2xl w-full max-h-[90vh] overflow-y-auto p-0">
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm shadow-md flex items-center justify-center text-gray-400 hover:text-gray-700 hover:bg-white transition-all">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-2/5 bg-gray-50 flex items-center justify-center p-6">
+          <img id="product-modal-image" src="" alt="" class="w-full h-auto object-contain rounded-xl max-h-64 md:max-h-80 cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+        </div>
+        <div class="md:w-3/5 p-6 sm:p-8">
+          <span id="product-modal-category" class="text-xs font-semibold text-brand-500 uppercase tracking-wider"></span>
+          <h3 id="product-modal-title" class="text-xl font-bold text-[#112250] mt-2 mb-4"></h3>
+          <div id="product-modal-description" class="text-sm text-gray-500 leading-relaxed mb-6"></div>
+          <button onclick="scrollToFormFromModal()" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-600 to-brand-700 text-white rounded-xl hover:from-brand-700 hover:to-brand-800 transition-all font-semibold text-sm shadow-md shadow-brand-600/20">
+            <i data-lucide="calculator" class="w-4 h-4"></i>
+            Заказать расчёт
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== IMAGE LIGHTBOX ===== -->
+  <div id="image-lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm" role="dialog" aria-modal="true" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-2xl shadow-2xl" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/60 shadow-sm shadow-black/[0.02]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 md:h-24">
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="#" class="flex items-center gap-3 no-underline text-inherit group">
+            <div class="relative">
+              <img id="header-logo" src="" alt="Золотой телец" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover ring-2 ring-gray-100 group-hover:ring-brand-300 transition-all">
+              <div class="absolute -inset-1 bg-brand-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-sm"></div>
+            </div>
+            <div class="hidden sm:block">
+              <p class="text-sm font-semibold leading-tight text-[#112250]" id="header-name">Golden Calf</p>
+              <p class="text-[10px] text-gray-400 leading-tight tracking-wider uppercase" id="header-name-en">Потолочные системы и освещение</p>
+            </div>
+          </a>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="#catalog" class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#112250] hover:bg-gray-50 rounded-lg transition-all">Каталог</a>
+          <a href="#order-form" class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#112250] hover:bg-gray-50 rounded-lg transition-all">Заявка</a>
+          <a href="#contacts" class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#112250] hover:bg-gray-50 rounded-lg transition-all">Контакты</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="tel:+79830237612" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-[#112250] hover:text-brand-600 transition-colors" id="header-phone">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="#order-form" class="group inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-700 rounded-xl hover:from-brand-700 hover:to-brand-800 shadow-md shadow-brand-600/20 hover:shadow-lg hover:shadow-brand-600/30 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 group-hover:animate-float"></i>
+            <span class="hidden xs:inline">Заказать звонок</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="flex-1">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="relative overflow-hidden bg-white">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#F5F0E9] via-white to-[#EDE5D8] pointer-events-none"></div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-400/[0.04] rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-500/[0.03] rounded-full translate-y-1/3 -translate-x-1/4 blur-3xl pointer-events-none"></div>
+      <div class="absolute inset-0 opacity-[0.015]" style="background-image: radial-gradient(#E0C68F 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-400/20 to-transparent hidden lg:block"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 bg-gradient-to-r from-brand-50 to-brand-100/50 border border-brand-200/60 rounded-full text-xs font-semibold text-brand-600 mb-8 shadow-sm shadow-brand-500/5 animate-fade-in">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+            B2B — комплексные потолочные системы и освещение
+          </div>
+          <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#112250] leading-[1.05] tracking-tight mb-6 animate-fade-in-up"></h1>
+          <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-brand-400 rounded-full mb-6"></div>
+          <p id="hero-subtitle" class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-2xl mb-10 animate-fade-in-up stagger-1"></p>
+          <div class="flex flex-wrap gap-4 animate-fade-in-up stagger-2">
+            <a href="#catalog" class="group inline-flex items-center gap-2.5 px-7 py-4 bg-[#112250] text-white rounded-xl hover:bg-gray-800 active:bg-gray-900 transition-all font-semibold text-sm shadow-xl shadow-gray-900/15 hover:shadow-2xl hover:shadow-gray-900/20">
+              Открыть каталог товаров
+              <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
+            </a>
+            <a href="#order-form" class="group inline-flex items-center gap-2.5 px-7 py-4 bg-gradient-to-r from-brand-600 to-brand-700 text-white rounded-xl hover:from-brand-700 hover:to-brand-800 transition-all font-semibold text-sm shadow-lg shadow-brand-600/20 hover:shadow-xl hover:shadow-brand-600/30">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+              Заказать расчёт
+            </a>
+            <a href="#order-form" class="group inline-flex items-center gap-2.5 px-7 py-4 border-2 border-gray-200 text-[#112250] rounded-xl hover:border-brand-400/70 hover:bg-brand-50/50 active:bg-brand-100/50 transition-all font-semibold text-sm hover:shadow-md hover:shadow-brand-500/5">
+              <i data-lucide="file-text" class="w-4 h-4 text-gray-400 group-hover:text-brand-500 transition-colors"></i>
+              Отправить заявку
+            </a>
+          </div>
+          <div class="flex items-center gap-6 mt-12 pt-8 border-t border-gray-100 animate-fade-in-up stagger-3">
+            <div class="flex items-center gap-2 text-xs text-gray-400">
+              <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
+              <span>4 направления</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-400">
+              <i data-lucide="package" class="w-3.5 h-3.5"></i>
+              <span>16+ товарных позиций</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-400">
+              <i data-lucide="factory" class="w-3.5 h-3.5"></i>
+              <span>4 категории товаров</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATALOG SECTION ===== -->
+    <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <div class="text-center mb-12 sm:mb-16">
+        <span class="text-xs font-semibold text-brand-500 uppercase tracking-[0.25em]">Каталог</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#112250] mt-4 mb-4">Продукция и решения</h2>
+        <div class="w-12 h-0.5 bg-gradient-to-r from-brand-500 to-brand-400 rounded-full mx-auto mb-4"></div>
+        <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base" id="catalog-description">Выберите направление для подробного ознакомления</p>
+      </div>
+
+      <!-- Tabs (mobile: horizontal scroll) -->
+      <div id="tabs-container" class="flex flex-nowrap overflow-x-auto scrollbar-none gap-1 pb-2 mb-10 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-gray-100" role="tablist"></div>
+
+      <!-- Category description -->
+      <div id="category-description" class="text-sm text-gray-400 mb-10 leading-relaxed max-w-3xl hidden sm:block"></div>
+
+      <!-- Products grid -->
+      <div id="products-container" class="opacity-0" style="transition: opacity 0.35s ease;"></div>
+
+      <div id="documents-container" class="mt-12 hidden"></div>
+    </section>
+
+    <!-- ===== ORDER FORM SECTION ===== -->
+    <section id="order-form" class="relative bg-gradient-to-b from-white to-[#F5F0E9]">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-brand-400/[0.02] rounded-full blur-3xl"></div>
+      </div>
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div class="text-center mb-12">
+          <span class="text-xs font-semibold text-brand-500 uppercase tracking-[0.25em]">Связь</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#112250] mt-4 mb-4">Оставить заявку</h2>
+          <div class="w-12 h-0.5 bg-gradient-to-r from-brand-500 to-brand-400 rounded-full mx-auto mb-4"></div>
+          <p class="text-gray-400 text-sm sm:text-base">Заполните форму, и наш менеджер свяжется с вами в ближайшее время</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl shadow-gray-900/5 border border-gray-100/80 p-6 sm:p-8 lg:p-10">
+          <form id="order-form-element" novalidate class="space-y-5 sm:space-y-6">
+            <div id="selected-product-display" class="hidden bg-gradient-to-r from-brand-50 to-brand-100/50 border border-brand-200/60 rounded-xl p-4 text-sm text-brand-700 font-medium flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 shrink-0 text-brand-500"></i>
+              <span></span>
+            </div>
+
+            <div>
+              <label for="form-name" class="block text-sm font-medium text-gray-700 mb-1.5">Ваше имя <span class="text-red-400">*</span></label>
+              <input type="text" id="form-name" name="name" required placeholder="Иван Иванов" class="w-full px-4 py-3.5 bg-[#F5F0E9] border border-gray-200 rounded-xl text-[#112250] placeholder:text-gray-400 text-sm">
+              <p class="text-red-500 text-xs mt-1.5 hidden" id="name-error">Пожалуйста, введите ваше имя</p>
+            </div>
+
+            <div>
+              <label for="form-phone" class="block text-sm font-medium text-gray-700 mb-1.5">Телефон <span class="text-red-400">*</span></label>
+              <input type="tel" id="form-phone" name="phone" required placeholder="+7 (999) 999-99-99" pattern="^[\+\d\s\-\(\)]{10,20}$" class="w-full px-4 py-3.5 bg-[#F5F0E9] border border-gray-200 rounded-xl text-[#112250] placeholder:text-gray-400 text-sm">
+              <p class="text-red-500 text-xs mt-1.5 hidden" id="phone-error">Пожалуйста, введите корректный номер телефона</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div>
+                <label for="form-category" class="block text-sm font-medium text-gray-700 mb-1.5">Направление</label>
+                <div class="relative">
+                  <select id="form-category" name="category" class="w-full px-4 py-3.5 bg-[#F5F0E9] border border-gray-200 rounded-xl text-[#112250] text-sm appearance-none cursor-pointer pr-10"></select>
+                  <i data-lucide="chevron-down" class="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+                </div>
+              </div>
+              <div>
+                <label for="form-product" class="block text-sm font-medium text-gray-700 mb-1.5">Вид</label>
+                <input type="text" id="form-product" name="product" placeholder="Укажите вид" readonly class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-[#112250] text-sm cursor-default">
+              </div>
+            </div>
+
+            <button type="submit" id="form-submit" class="group w-full py-4 bg-gradient-to-r from-[#112250] to-gray-800 text-white rounded-xl hover:from-gray-800 hover:to-gray-900 active:from-gray-900 active:to-gray-950 transition-all font-semibold text-sm shadow-lg shadow-gray-900/15 hover:shadow-xl hover:shadow-gray-900/20 flex items-center justify-center gap-2.5">
+              <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+              Отправить запрос
+            </button>
+
+            <p class="text-xs text-gray-400 text-center">Нажимая «Отправить запрос», вы соглашаетесь на обработку персональных данных</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contacts" class="bg-[#112250] text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-3.5 mb-4">
+            <div class="relative">
+              <img id="footer-logo" src="" alt="Золотой телец" class="w-24 h-24 rounded-full object-cover ring-2 ring-white/10">
+              <div class="absolute -inset-1 bg-brand-500/10 rounded-xl -z-10 blur-md"></div>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-white" id="footer-name">ООО "Золотой телец"</p>
+              <p class="text-[11px] text-gray-500 tracking-wider uppercase" id="footer-name-en">Golden Calf, LLC</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed max-w-sm" id="footer-slogan"></p>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h4 class="text-xs font-semibold text-white uppercase tracking-[0.15em] mb-5">Контакты</h4>
+          <ul class="space-y-3.5 text-sm">
+            <li>
+              <div class="flex items-center gap-3 text-gray-400">
+                <span class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                  <i data-lucide="building-2" class="w-4 h-4"></i>
+                </span>
+                <div>
+                  <p class="text-white text-xs font-medium">Офис</p>
+                  <span id="footer-phone">+7 (983) 023-76-12</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center gap-3 text-gray-400">
+                <span class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                  <i data-lucide="smartphone" class="w-4 h-4"></i>
+                </span>
+                <div>
+                  <p class="text-white text-xs font-medium">Отдел продаж</p>
+                  <span>+7 (983) 023-76-12</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a id="footer-phone2-link" href="tel:+79139250897" class="flex items-center gap-3 text-gray-400 hover:text-brand-400 transition-colors group ml-11">
+                <span>+7 (913) 925-08-97</span>
+              </a>
+            </li>
+            <li>
+              <a id="footer-email-link" href="mailto:goldencalf4@gmail.com" class="flex items-center gap-3 text-gray-400 hover:text-brand-400 transition-colors group">
+                <span class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-brand-500/10 transition-colors">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </span>
+                <span id="footer-email">goldencalf4@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a id="footer-whatsapp" href="https://wa.me/79830237612" target="_blank" rel="noopener" class="flex items-center gap-3 text-gray-400 hover:text-brand-400 transition-colors group">
+                <span class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-brand-500/10 transition-colors">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                </span>
+                <span>WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h4 class="text-xs font-semibold text-white uppercase tracking-[0.15em] mb-5">Сайт в QR</h4>
+          <div class="bg-white/5 rounded-2xl p-4 inline-block">
+            <img id="site-qr" src="" alt="QR код сайта" class="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mx-auto" loading="lazy">
+          </div>
+          <p class="text-xs text-gray-500 mt-3">Наведите камеру для перехода на сайт</p>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h4 class="text-xs font-semibold text-white uppercase tracking-[0.15em] mb-5">Навигация</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#catalog" class="text-gray-400 hover:text-brand-400 transition-colors">Каталог</a></li>
+            <li><a href="#order-form" class="text-gray-400 hover:text-brand-400 transition-colors">Заявка</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <p>&copy; 2026 Golden Calf (ООО "Золотой телец"). Все права защищены.</p>
+        <p class="flex items-center gap-1.5">Сделано с <i data-lucide="heart" class="w-3 h-3 inline text-red-400/70"></i> для бизнеса</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      'use strict';
+
+      // ============================================================
+      //  STATE
+      // ============================================================
+      var appData = null;
+      var activeTabId = null;
+      var isTransitioning = false;
+      var currentCategory = null;
+
+      // ============================================================
+      //  EMBEDDED FALLBACK DATA (для локального открытия без сервера)
+      // ============================================================
+                        var embeddedData = {"companyInfo":{"name":"Golden Calf (Золотой телец)","nameEn":"Golden Calf","nameLegal":"ООО \"Золотой телец\"","slogan":"Комплексные потолочные системы и профессиональное освещение для коммерческих и жилых объектов","subtitle":"Поставляем потолки Грильято, кубообразную рейку, панели Аквастил и подбираем свет под ключ — от ТЦ и офисов до автосалонов и элитных резиденций","logo":"лого.png","phone":"+7 (983) 023-76-12","phoneSales1":"+7 (983) 023-76-12","phoneSales2":"+7 (913) 925-08-97","email":"goldencalf4@gmail.com","whatsapp":"https://wa.me/79830237612","presentationPdf":"Презентация потолков и панелей.pdf","lightingPdf":"светотехническая продукция.pdf"},"categories":[{"id":"grilyato","name":"Потолки Грильято","description":"Самый популярный решётчатый (ячеистый, растровый, open-cell) подвесной потолок для внутренней отделки общественных помещений. Стандартная ячейка создаёт пропорциональные поверхности с эффектом легкости и прозрачности. Решётка легко монтируется и демонтируется, обеспечивая доступ к инженерным коммуникациям. Сертификат НГ, КМ0 — не горит. Высокая влагостойкость, не накапливает пыль, не выцветает на солнце. Потолок можно опустить на любую высоту, скрывая некрасивые коммуникации.","advantages":["Не горит — сертификат НГ, КМ0","Запотолочное пространство вентилируется и просматривается","Возможна установка систем пожаротушения","Высокая влагостойкость, не накапливает пыль","Легко снимается при демонтаже","Простой доступ к запотолочным коммуникациям","Любая высота опускания от чернового потолка","Различные формы, цвета RAL и под дерево","Возможность подвеса табличек, растяжек, рекламы на магнитах","Закрывает большие площади без провисания","Увеличивает светоотражение за счёт ячеек — экономия электроэнергии"],"applications":["Супермаркеты и торговые центры","Аэропорты и вокзалы","Рестораны и кафе","Офисы и бизнес-центры","Клубы и развлекательные центры","Автосалоны","Магазины и бутики","Коридоры и холлы","Подсобные помещения","Заправочные станции","Подъезды и парадные","Квартиры и частные дома","Гаражи и веранды","Зимние сады и оранжереи"],"products":[{"id":"grilyato-standard","name":"Грильято Стандарт","image":"грильято 1.jpeg","specs":["Высота: h30 и h40 мм","Ячейки: 30×30, 40×40, 50×50, 60×60, 75×75, 86×86, 100×100, 120×120, 150×150, 200×200 мм","Материал: оцинкованная сталь, алюминий","Цвет: белый, серый матовый, серый металлик, графит или любой RAL","Покрытие: полимерное, толщина 0,25–0,35 мм","Пожарный класс: КМ0 (НГ)"],"description":"Сейчас самый популярный для внутренней отделки общественных помещений решетчатый потолок — Грильято (еще он называется ячеистым, решетчатым или растровым, open-cell). Грильято «Стандарт» — самый распространенный Грильято со стандартной ячейкой, имеет классическую конструкцию и позволяет создавать пропорциональные поверхности и добиваться идеальных форм. При помощи этой системы достигается эффект непрерывного решетчатого потолка, обладающего визуальными свойствами легкости и прозрачности."},{"id":"grilyato-jalyuzi","name":"Грильято-Жалюзи","image":"Грильято-Жалюзи.JPG","specs":["Поперечные рейки расположены чаще стандартного","Ячейки: 50×100/150/200/300, 60×100/150/200/300, 75×100/150/200/300, 86×100/150/200/300, 100×100/150/200/300 мм","Материал: оцинкованная сталь, алюминий","Цвет: белый, серый матовый, серый металлик, графит или любой RAL","Покрытие: полимерное, толщина 0,25–0,35 мм","Пожарный класс: КМ0 (НГ)"],"description":"Грильято-жалюзи. Такой же, как обычный Грильято, только поперечные рейки располагаются чаще. Чаще используется в местах выхода коммуникаций или в узких помещениях. Комната, коридор или лоджия визуально становятся шире. Предоставляем для наших покупателей такой вид потолков без наценки на эксклюзивность.\n\nПреимущества потолка Грильято:\n- Запотолочное пространство хорошо просматривается и вентилируется.\n- Можно установить системы для пожаротушения. Пожар можно быстро локализовать, так как потолок Грильято не препятствует пожаротушению.\n- Отличаются высокой влагостойкостью, не накапливают на себе пыль и сохраняют привлекательность даже после воздействия прямых солнечных лучей.\n- Просто снимается при демонтаже.\n- Легкость в обслуживании запотолочных коммуникаций.\n- Потолок Грильято можно опустить на любую высоту от чернового потолка, поэтому под декоративным потолком можно спрятать некрасивые коммуникации. А если покупатель совсем не хочет видеть эти коммуникации, на потолок Грильято сверху стелят изоспан черного цвета. И тогда кажется, что потолок парит в невесомости.\n- Различные формы, дизайнерские решения, цвет по шкале RAL и под дерево, добавление светильников.\n- К потолку можно легко вешать таблички, растяжки, украшения (подвешивается магнит, к которому прикреплен любой вид рекламы, декора и т.д.).\n- Закрывает большие площади и не провисает.\n- Легко проходит по пожарным требованиям.\n- Увеличивает светоотражение за счет ячеек, что экономит электроэнергию."},{"id":"grilyato-gl15-gl24","name":"GL-15 и GL-24","image":"GL-15.JPG","specs":["Толщина граней: 15 мм (GL-15) или 24 мм (GL-24)","Высота ребра: 30, 37 мм","Ячейки: 50×50, 60×60, 75×75, 86×86, 100×100, 120×120, 150×150, 200×200 мм","Ячейки жалюзи: 50×100/150/200/300, 60×100/150/200/300, 75×100/150/200/300, 86×100/150/200/300, 100×100/150/200/300 мм","Система крепления: Т-профиль (Армстронг)","Материал: оцинкованная сталь, алюминий, RAL-полимерное покрытие 0,25–0,3 мм"],"description":"Потолки GL15 и GL24 — наиболее оптимизированный вариант модульных потолков Грильято. Толщина граней Грильято GL соответствует названию: 15 мм или 24 мм. Такие потолки применяются в паре с самой распространённой подвесной системой Т15, которая подходит ко всем видам подвесных систем типа Армстронг.\n\nОснова долговечности и безупречной работы любой подвесной системы — ее каркас. Именно поэтому и разработали T-образный профиль с применением передовых материалов и технологий, чтобы обеспечить максимальную надежность на десятилетия.\n\n1) Материал премиум-класса: алюмоцинк. Наш профиль изготовлен из алюмоцинка — материала, который сочетает в себе лучшие свойства нержавеющей стали и цинка. Это гарантирует исключительную коррозийную стойкость, что делает профиль долговечным и надежным, а также высокую прочность. Материал сохраняет целостность даже в сложных условиях, обеспечивая стабильность конструкции.\n\n2) Усиление жесткости: продольные ребра прочности. Вдоль всей длины профиля методом холодной штамповки нанесены специальные насечки (ребра жесткости). Это важнейшая инженерная особенность, которая повышает сопротивляемость нагрузкам. Ребра создают эффект армирования, увеличивая прочность профиля. Он не прогибается под весом модулей и не провисает со временем. Обеспечивает идеальную геометрию. Конструкция сохраняет свою форму даже при длительной эксплуатации, гарантируя безупречно ровную поверхность потолка.\n\n3) Совершенный стыковочный узел. Мы уделили особое внимание соединению профилей в единую конструкцию. Стыковочный узел нашего Т-профиля имеет усиленную штампованную форму, которая полностью предотвращает расслоение. Профили надежно сцепляются друг с другом, образуя прочное соединение, исключающее люфт и смещение. Это обеспечивает точный и быстрый монтаж, каркас собирается без лишних усилий.\n\nВ итоге наш Т-образный профиль — это результат глубокой инженерной проработки. Использование алюмоцинка, ребер жесткости и усиленного стыковочного узла делает его надежным фундаментом для Вашего потолка. Это инвестиция в долговечность, стабильность и безупречный внешний вид на годы вперед.\n\nСущественные особенности GL15 и GL24:\nПодвесные системы потолков Грильято GL и Армстронг полностью совместимы. Поэтому потерявший вид ранее смонтированный потолок Армстронг (желтые пятна, сколы, поломанные углы) можно легко обновить без серьезных денежных затрат. При этом не надо закрывать свое помещение и делать глобальный ремонт, разводя пыль и грязь, а просто нужно убрать старые плиты Армстронг и поставить на этот же каркас потолок GL15 или GL24."}]},{"id":"reechnye","name":"Реечные кубообразные потолки","description":"Металлические ламели для потолочных и стеновых конструкций. Доступен монтаж «волной» в разных плоскостях и с разным шагом. Гарантия от провисания рейки на весь срок эксплуатации. Держит дополнительные нагрузки (видеокамеры, светильники). Возможность производства рейки в нестандартных размерах по вашему дизайн-проекту. Цвета по шкале RAL, хром, золото, текстуры ценных пород дерева.","advantages":["Объёмная поверхность с чёткими геометрическими линиями","Регулируемый шаг рейки (20–150 мм)","Высота профиля от 30 до 200 мм","Доступен монтаж «волной» в разных плоскостях","Производится в цветах RAL, хром, золото, текстуры дерева","Возможность интеграции светильников","Гарантия от провисания на весь срок эксплуатации","Высокая влагостойкость","Класс пожарной безопасности КМ0 (не горят)","Лёгкий монтаж и обслуживание"],"applications":["Жилые комплексы","Торговые центры","Офисы и бизнес-центры","Аэропорты и вокзалы","Кафе и рестораны","Медицинские центры","Производственные помещения","Авторские дизайнерские проекты"],"products":[{"id":"reechnye-kuboobraznaya","name":"Кубообразная рейка","image":"Кубообразная рейка.jpeg","specs":["Размер: 1,0–6,0 м","Высота ребра: 30–200 мм","Ширина профиля: 30–150 мм","Шаг: 20/30/40/50/60/70/80/90/100/120/150 мм","Система крепления: несущая шина (гребенка)","Материал: оцинкованная сталь, RAL-полимерное покрытие 0,3–0,5 мм"],"description":"Реечные конструкции. Металлические ламели применяются для потолочных и стеновых конструкций. Производится в цветах по шкале RAL, хром, золото и в текстурах ценных пород дерева. Доступен монтаж «волной» в разных плоскостях и с разным шагом. Гарантия от провисания рейки на весь срок эксплуатации. Держит дополнительные нагрузки (видеокамеры, светильники). Возможность производства рейки в нестандартных размерах по вашему дизайн-проекту.\n\nКубообразная рейка с выраженной жесткостью профиля, так как имеет 4 угла профилирования с прямолинейной геометрией. Обладает широким диапазоном всевозможных сечений в заданном интервале. Такой вид рейки применяется для потолков и фасадов с той только особенностью, что для фасада несущая шина (гребенка, стрингер) применяется с дополнительной фиксацией кубообразного профиля, препятствующей выщелкиванию при ветровых нагрузках."},{"id":"reechnye-volnoobraznaya","name":"Волнообразная рейка","image":"Волнообразная рейка.jpeg","specs":["Материал: оцинкованная сталь / алюминий / нержавеющая сталь","Размеры В/Ш/Д: 30–300 / 50–500 / до 2 м","Толщина: 0,4–2 мм","Цвет: RAL / текстуры дерева","Расположение: горизонтальное / вертикальное / под углом / по радиусу / криволинейное","Любой шаг между реек, любое сечение (мин. 30×30)"],"description":"Волнообразная рейка. С помощью этой реечной системы вы сможете воплотить любые самые смелые и креативные проекты:\n- любой шаг между реек, любой размер по сечению (минимально 30×30);\n- любые цвета RAL, глянцевое, матовое или текстурное покрытие;\n- имитация дерева или металлов."}]},{"id":"aquasteel","name":"Панели Аквастил (Aqua Steel)","description":"Пожаробезопасность. Акустический комфорт. Индивидуальный дизайн. Панели из нержавейки с 3D эффектом водной ряби, особенно выигрышно смотрятся в горизонтальной плоскости, создавая иллюзию подлинных волн на глади воды. Зеркальная поверхность визуально увеличивает объём помещения и высоту стен. Отражённый свет потолочных светильников повышает уровень освещённости. Материал: нержавеющая сталь 0,8 мм. Оптимальный раскрой листа 1100×500 мм, возможны другие размеры в рамках габаритов листа 1220×2450 мм.","advantages":["Никогда не ржавеет — нержавеющая сталь AISI 304","Уникальный 3D-эффект «Водная рябь» с неповторяющимися паттернами","Пожаробезопасность — негорючий материал","Акустический комфорт — звукопоглощающие свойства","Подходит для улицы: устойчив к дождю, снегу, УФ","Визуально увеличивает объём помещения","Высокая влагостойкость — для бассейнов, саун, санузлов","Долговечность — не теряет вид десятилетиями","Широкий выбор размеров: до 1220×2450 мм","Премиальный внешний вид для элитных интерьеров"],"applications":["Потолки и подвесные системы (Hook-On)","Стены и акцентные панели","Бассейны и спа-зоны","Ванные комнаты и сауны","Лифтовые холлы и шахты","Фасады зданий","Бутики и шоурумы премиум-класса","Рестораны и лаунж-зоны","Холлы отелей и бизнес-центров","Элементы интерьера: панно, зеркала, перегородки"],"products":[{"id":"aquasteel-hookon","name":"Панели Aqua Steel «Водная рябь»","image":"водная рябь 7.jpeg","gallery":["Аквастил 1.JPG","водная рябь 1.jpeg","водная рябь 3.jpg","водная рябь 5.jpeg","водная рябь 7.jpeg"],"specs":["Тип: Hook-On подвесная","Материал: нерж. сталь AISI 304","Поверхность: зеркальный хром / матовая / PVD-золото","Толщина: 0.8 мм","Эффект: 3D «Водная рябь»","Раскрой: 1100×500 мм / до 1220×2450 мм"],"description":"Инновационные 3D-панели с эффектом водной поверхности «Водная рябь» / Aqua Steel из нержавеющей стали для интерьера и экстерьера. Используют при декоре потолка, стен, фасадов, кухонных поверхностей, панно и мн. др. Практичный, экологичный и долговечный материал. Не боится перепадов температур, влажности и механических повреждений. Прост в монтаже. Универсален для коммерческих и жилых помещений. Создавайте авторский дизайн вместе с нами! Изготовим в нужном Вам размере.\n\nПожаробезопасность. Акустический комфорт. Индивидуальный дизайн.\n\nНИКОГДА НЕ ЗАРЖАВЕЕТ. Даже на улице, под дождем и снегом, во влажных помещениях, бассейнах, ванных и саунах поверхность всегда останется идеальной, без следов коррозии и ржавчины.\n\nПОТОЛКИ. Панели из нержавейки с 3D-эффектом водной ряби особенно выигрышно смотрятся в горизонтальной плоскости, создавая иллюзию подлинных волн на глади воды. Отделанный ими потолок выглядит необычно и стильно, а зеркальная поверхность визуально увеличивает объем помещения и высоту стен.\n\nСТЕНЫ. Стены с 3D-панелями из нержавейки уместны в любом помещении с современным или неоклассическим стилем интерьера благодаря высокотехнологичному исполнению, практичному и красивому материалу, а также большому выбору паттернов.\n\nБАССЕЙНЫ И САНУЗЛЫ. Панели не подвержены коррозии и способны долго прослужить в помещении с высокой влажностью, не теряя эстетичного внешнего вида.\n\nЭЛЕМЕНТЫ ИНТЕРЬЕРА. Технологичный и эстетически привлекательный материал — нержавейка с 3D-визуализацией волн на воде — находит своё применение во множестве интерьерных решений.\n\nФАСАДЫ ЗДАНИЙ. Декоративные объёмные панели из нержавеющей стали с паттерном «волн» на поверхности идеально подходят для архитектуры жилых, офисных и административных зданий."}]},{"id":"lighting","name":"Осветительные приборы","description":"Профессиональное светодиодное освещение, спроектированное для интеграции в потолочные системы Грильято и кубообразную рейку. Мы специализируемся на продаже светотехнической продукции для объектов промышленного, коммерческого, административного, учебного, медицинского и прочего назначения.","advantages":["Специально разработаны для потолков Грильято и рейки","Высокий индекс цветопередачи CRI ≥ 80–90","Диапазон цветовой температуры: 2700K–6500K","Энергоэффективные LED-матрицы","Алюминиевый корпус для эффективного охлаждения","Опционально — аварийное питание (1 ч)","Высокая степень защиты IP20–IP65","Срок службы до 100 000 часов","Сертифицированная продукция (EAC)","Долгий срок службы — до 50 000 часов"],"applications":["Офисные помещения open-space","Торговые залы и бутики","Производственные цеха и склады","Паркинги и автосалоны","Рестораны и кафе","Выставочные стенды и галереи","Образовательные учреждения","Медицинские кабинеты","Спортивные залы","Административные и бытовые помещения"],"products":[{"id":"lighting-linear","name":"Линейные светильники","image":"Линейный светильник1.png","specs":["Длина: 1 / 1,5 / 2 / 3 м","Ширина: 51 / 102 мм","Высота: 43 мм","Тип установки: подвесной / накладной","Корпус: алюминиевый","Рассеиватель: матовое / прозрачное стекло","Цвет корпуса: белый, чёрный, любой RAL","Цветовая температура: 5000К (3000, 4000К под заказ)","Степень защиты: IP40 / IP54 / IP65","Регулировка яркости: DALI","Срок службы: 100 000 часов","Модуль аварийного освещения: 25W, 2 часа"],"description":"Линейные светильники из алюминиевого профиля можно соединять в непрерывные прямые или ломанные линии, комбинировать несколько светильников с разными цветовыми температурами."},{"id":"lighting-ring","name":"Подвесные кольцевые светильники","image":"Подвесные светильники.png","specs":["Диаметр: от 800 до 1600 мм","Ширина: от 45 до 100 мм","Высота: от 40 до 90 мм","Тип установки: подвесной / накладной","Корпус: алюминиевый / ПВХ","Рассеиватель: матовое стекло","Цвет корпуса: белый, чёрный, любой RAL","Цветовая температура: 5000К (3000, 4000К под заказ)","Степень защиты: IP40 / IP54 / IP65","Регулировка яркости: DALI","Срок службы: 100 000 часов","Декор: искусственная зелень"],"description":"Кольцевой светильник используется в общественных помещениях как элемент светового дизайна. Есть круглой, овальной, треугольной и зигзагообразной формы. Можно комбинировать с круговыми и линейными светильниками, декорировать искусственной зеленью."},{"id":"lighting-full-glow","name":"Светильники полного свечения","image":"Полного свечения.png","specs":["Форма: квадрат, круг, овал","Тип установки: подвесной / накладной","Корпус: алюминиевый","Рассеиватель: матовое стекло","Цвет корпуса: белый, чёрный, любой RAL","Цветовая температура: 5000К (3000, 4000К под заказ)","Степень защиты: IP40 / IP54 / IP65","Регулировка яркости: DALI","Срок службы: 100 000 часов","Модуль аварийного освещения: 25W, 2 часа"],"description":""},{"id":"lighting-ceiling-grilyato","name":"Потолочные светильники для Грильято и Армстронг","image":"Потолочные встраиваемые для Грильято и Армстронг.png","specs":["Квадрат: 595×595 мм","Прямоугольник: 1200×150–180 мм","Высота: 40 мм","Тип установки: встраиваемый / накладной","Корпус: сталь","Рассеиватель: микропризма / матовое стекло","Цвет корпуса: белый","Цветовая температура: 5000К (3000, 4000К под заказ)","Степень защиты: IP40 / IP54 / IP65","Защита: стальная решётка","Регулировка яркости: DALI","Срок службы: 100 000 часов"],"description":"Есть модели встраиваемых квадратных (60x60x40) светильников с цельнометаллическим сварным корпусом из оцинкованной листовой стали, покрытые полимерными красителями. Встраивается в подвесные потолки системы CLIP-IN."},{"id":"lighting-recessed-grilyato","name":"Встраиваемые светильники для Грильято","image":"Встраеваемый в ячейку Грильято фото.png","specs":["Форма: квадрат","Габариты: от 35 до 185 мм","Высота: 40 мм","Тип установки: встраиваемый","Корпус: алюминиевый / ПВХ","Цвет корпуса: белый","Мощность: 5 / 8 / 10 Вт","Цветовая температура: 3000 / 4000 / 5000 К","Степень защиты: IP20 / IP40 / IP54","Индекс цветопередачи (CRI): RA80","Регулировка яркости: DALI, 1-10V"],"description":"Встраиваемые светильники для потолка «Грильято». Корпус изготовлен из пластика и алюминия, имеет выраженную юбку сверху для простого монтажа в ячейку потолка. Источник питания расположен вне корпуса и, как правило, один на несколько светильников. Светильник монтируется в ячейку Грильято."}]}]};;
+      // DOM refs
+      var loadingEl = document.getElementById('loading-overlay');
+      var errorEl = document.getElementById('error-overlay');
+      var errorMsg = document.getElementById('error-message');
+      var tabsContainer = document.getElementById('tabs-container');
+      var catDesc = document.getElementById('category-description');
+      var productsContainer = document.getElementById('products-container');
+      var heroTitle = document.getElementById('hero-title');
+      var heroSubtitle = document.getElementById('hero-subtitle');
+      var headerLogo = document.getElementById('header-logo');
+      var footerLogo = document.getElementById('footer-logo');
+      var headerName = document.getElementById('header-name');
+      var headerNameEn = document.getElementById('header-name-en');
+      var headerPhone = document.getElementById('header-phone');
+      var footerName = document.getElementById('footer-name');
+      var footerNameEn = document.getElementById('footer-name-en');
+      var footerSlogan = document.getElementById('footer-slogan');
+      var footerPhone = document.getElementById('footer-phone');
+      var footerEmail = document.getElementById('footer-email');
+      var footerWpp = document.getElementById('footer-whatsapp');
+      var formCat = document.getElementById('form-category');
+      var formProduct = document.getElementById('form-product');
+      var selectedProductDisplay = document.getElementById('selected-product-display');
+      var modal = document.getElementById('success-modal');
+      var lucide = window.lucide;
+
+      // ============================================================
+      //  INIT
+      // ============================================================
+      init();
+
+      function init() {
+        fetch('./content.json' + '?t=' + Date.now())
+          .then(function(response) {
+            if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+            return response.json();
+          })
+          .then(function(data) {
+            appData = data;
+            renderAll();
+            loadingEl.style.display = 'none';
+          })
+          .catch(function(err) {
+            console.warn('Fetch content.json failed, using embedded fallback.', err);
+            // Пробуем использовать встроенные данные (работает при file://)
+            if (typeof embeddedData !== 'undefined' && embeddedData) {
+              appData = embeddedData;
+              renderAll();
+              loadingEl.style.display = 'none';
+            } else {
+              loadingEl.style.display = 'none';
+              errorMsg.textContent = 'Не удалось загрузить файл данных. Проверьте, что content.json находится в той же папке, что и index.html, и попробуйте снова.';
+              errorEl.classList.remove('hidden');
+              errorEl.style.display = 'flex';
+              if (lucide) lucide.createIcons();
+            }
+          });
+      }
+
+      // ============================================================
+      //  RENDER ALL
+      // ============================================================
+      function renderAll() {
+        renderHeader();
+        renderHero();
+        renderTabs();
+        // activate first tab
+        if (appData.categories.length > 0) {
+          switchTab(appData.categories[0].id);
+        }
+        populateFormCategories();
+        renderFooter();
+        if (lucide) lucide.createIcons();
+      }
+
+      // ============================================================
+      //  RENDER: HEADER
+      // ============================================================
+      function renderHeader() {
+        var ci = appData.companyInfo;
+        headerLogo.src = encodeURI(ci.logo);
+        headerLogo.onerror = function() { this.src = ''; this.style.display = 'none'; };
+        headerName.textContent = ci.nameEn || ci.name;
+        headerNameEn.textContent = 'Потолочные системы и освещение';
+        headerPhone.textContent = ci.phone;
+        headerPhone.href = 'tel:' + ci.phone.replace(/[^+\d]/g, '');
+      }
+
+      // ============================================================
+      //  RENDER: HERO
+      // ============================================================
+      function renderHero() {
+        var ci = appData.companyInfo;
+        heroTitle.textContent = ci.slogan;
+        heroSubtitle.textContent = ci.subtitle;
+      }
+
+      // ============================================================
+      //  RENDER: TABS
+      // ============================================================
+      function renderTabs() {
+        tabsContainer.innerHTML = '';
+        appData.categories.forEach(function(cat, idx) {
+          var btn = document.createElement('button');
+          btn.className = 'tab-btn flex-shrink-0 px-5 py-2.5 text-sm font-medium ' +
+            (idx === 0
+              ? 'text-brand-500 active'
+              : 'text-gray-500 hover:text-[#112250]');
+          btn.setAttribute('role', 'tab');
+          btn.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+          btn.dataset.id = cat.id;
+          btn.textContent = cat.name;
+          btn.addEventListener('click', function() { switchTab(cat.id); });
+          tabsContainer.appendChild(btn);
+        });
+      }
+
+      // ============================================================
+      //  SWITCH TAB
+      // ============================================================
+      function switchTab(categoryId) {
+        if (isTransitioning || activeTabId === categoryId) return;
+        isTransitioning = true;
+
+        // find category
+        var cat = null;
+        for (var i = 0; i < appData.categories.length; i++) {
+          if (appData.categories[i].id === categoryId) { cat = appData.categories[i]; break; }
+        }
+        if (!cat) { isTransitioning = false; return; }
+
+        // update tabs UI
+        var btns = tabsContainer.querySelectorAll('.tab-btn');
+        btns.forEach(function(btn) {
+          var isActive = btn.dataset.id === categoryId;
+          btn.className = 'tab-btn flex-shrink-0 px-5 py-2.5 text-sm font-medium ' +
+            (isActive
+              ? 'text-brand-500 active'
+              : 'text-gray-500 hover:text-[#112250]');
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        // scroll tab into view on mobile
+        var activeBtn = tabsContainer.querySelector('[data-id="' + categoryId + '"]');
+        if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+        // fade out
+        productsContainer.style.opacity = '0';
+        catDesc.innerHTML = (cat.description || '').split('\n\n').map(function(p) { var t = p.trim(); return t ? '<p class="mb-2 last:mb-0">' + escHtml(t) + '</p>' : ''; }).join('');
+
+        setTimeout(function() {
+          activeTabId = categoryId;
+          currentCategory = cat;
+          renderProducts(cat);
+          renderDocuments(categoryId);
+          productsContainer.style.opacity = '1';
+          isTransitioning = false;
+          if (lucide) lucide.createIcons();
+        }, 300);
+      }
+
+      // ============================================================
+      //  RENDER: PRODUCTS
+      // ============================================================
+      function renderProducts(category) {
+        productsContainer.innerHTML = '';
+
+        if (!category.products || category.products.length === 0) {
+          productsContainer.innerHTML = '<p class="text-gray-400 text-center py-10">В этой категории пока нет товаров.</p>';
+          return;
+        }
+
+        var grid = document.createElement('div');
+        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6';
+
+        category.products.forEach(function(product, pidx) {
+          var card = document.createElement('div');
+          card.className = 'product-card group bg-white rounded-2xl border border-gray-100 overflow-hidden opacity-0 animate-fade-in-up cursor-pointer';
+          card.style.animationDelay = (pidx * 0.08) + 's';
+          card.setAttribute('role', 'button');
+          card.setAttribute('tabindex', '0');
+          card.addEventListener('click', function() { openProductModal(product, category); });
+          card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProductModal(product, category); }
+          });
+
+          var imgWrapper = document.createElement('div');
+          imgWrapper.className = 'img-wrapper aspect-[4/3]';
+
+          var img = document.createElement('img');
+          img.className = 'w-full h-full object-cover cursor-pointer';
+          img.alt = product.name;
+          img.loading = 'lazy';
+          img.src = encodeURI(product.image);
+          img.addEventListener('click', function(e) { e.stopPropagation(); openLightbox(img.src, img.alt); });
+          img.onerror = function() {
+            this.style.display = 'none';
+            var fallback = document.createElement('div');
+            fallback.className = 'flex items-center justify-center w-full h-full bg-gradient-to-br from-gray-100 to-gray-200';
+            fallback.style.aspectRatio = '4/3';
+            fallback.innerHTML = '<div class="text-center text-gray-400"><i data-lucide="package" class="w-10 h-10 mx-auto mb-2"></i></div>';
+            imgWrapper.appendChild(fallback);
+            if (lucide) lucide.createIcons();
+          };
+
+          imgWrapper.appendChild(img);
+          card.appendChild(imgWrapper);
+
+          var body = document.createElement('div');
+          body.className = 'p-4';
+          var nameEl = document.createElement('h3');
+          nameEl.className = 'text-sm font-semibold text-[#112250] leading-snug line-clamp-2';
+          nameEl.textContent = product.name;
+          body.appendChild(nameEl);
+
+          var moreBtn = document.createElement('span');
+          moreBtn.className = 'inline-flex items-center gap-1 text-xs font-medium text-brand-600 mt-2 group-hover:gap-1.5 transition-all';
+          moreBtn.innerHTML = 'Подробнее <i data-lucide="chevron-right" class="w-3 h-3"></i>';
+          body.appendChild(moreBtn);
+
+          card.appendChild(body);
+          grid.appendChild(card);
+        });
+
+        productsContainer.appendChild(grid);
+      }
+
+      // ============================================================
+      //  RENDER: DOCUMENTS
+      // ============================================================
+      function renderDocuments(categoryId) {
+        var container = document.getElementById('documents-container');
+        container.innerHTML = '';
+        container.classList.add('hidden');
+
+        var ci = appData.companyInfo;
+        var docs = [];
+
+        // Main presentation for all categories
+        if (ci.presentationPdf) {
+          docs.push({
+            title: 'Презентация потолков и панелей',
+            desc: 'Скачайте полную презентацию всех видов потолков и панелей.',
+            file: ci.presentationPdf,
+            label: 'Скачать презентацию (PDF)'
+          });
+        }
+
+        // Lighting PDF for lighting category
+        if (categoryId === 'lighting' && ci.lightingPdf) {
+          docs.push({
+            title: 'Светотехническая продукция',
+            desc: 'Полный каталог светотехнической продукции. Другие модели светильников доступны в PDF-презентации.',
+            file: ci.lightingPdf,
+            label: 'Скачать каталог (PDF)'
+          });
+        }
+
+        // Hook-On manual for aquasteel
+        if (categoryId === 'aquasteel') {
+          docs.push({
+            title: 'Схема монтажа Hook-On',
+            desc: 'Скачайте PDF-схему сборки подвесной системы Hook-On для панелей Aqua Steel.',
+            file: 'Сборка HOOK-ON_LWR.pdf',
+            label: 'Скачать PDF (2 MB)'
+          });
+        }
+
+        if (docs.length === 0) return;
+
+        container.classList.remove('hidden');
+        var wrap = document.createElement('div');
+        wrap.className = 'grid grid-cols-1 sm:grid-cols-2 gap-5';
+
+        docs.forEach(function(doc) {
+          var card = document.createElement('div');
+          card.className = 'bg-white rounded-2xl border border-gray-100 p-6 sm:p-8';
+
+          var title = document.createElement('h3');
+          title.className = 'text-lg font-semibold text-[#112250] mb-4 flex items-center gap-2';
+          title.innerHTML = '<i data-lucide="file-down" class="w-5 h-5 text-brand-500"></i> ' + doc.title;
+          card.appendChild(title);
+
+          var desc = document.createElement('p');
+          desc.className = 'text-sm text-gray-400 mb-4 leading-relaxed';
+          desc.textContent = doc.desc;
+          card.appendChild(desc);
+
+          var link = document.createElement('a');
+          link.href = doc.file;
+          link.target = '_blank';
+          link.className = 'inline-flex items-center gap-2.5 px-6 py-3 bg-[#112250] text-white rounded-xl hover:bg-gray-800 transition-all font-semibold text-sm shadow-md';
+          link.innerHTML = '<i data-lucide="download" class="w-4 h-4"></i> ' + doc.label;
+          card.appendChild(link);
+
+          wrap.appendChild(card);
+        });
+
+        container.appendChild(wrap);
+      }
+
+      // ============================================================
+      //  RENDER: FOOTER
+      // ============================================================
+      function renderFooter() {
+        var ci = appData.companyInfo;
+        footerLogo.src = encodeURI(ci.logo);
+        footerLogo.onerror = function() { this.src = ''; this.style.display = 'none'; };
+        footerName.textContent = ci.name;
+        footerNameEn.textContent = ci.nameEn;
+        footerSlogan.textContent = ci.slogan;
+        // QR code — текущий URL сайта
+        var qrImg = document.getElementById('site-qr');
+        if (qrImg) {
+          var siteUrl = window.location.href;
+          if (siteUrl.indexOf('file://') === 0 || siteUrl === 'about:blank') {
+            siteUrl = 'https://golden-calf.vercel.app';
+          }
+          var encodedUrl = encodeURIComponent(siteUrl);
+          qrImg.src = 'https://quickchart.io/qr?size=250&text=' + encodedUrl + '&margin=1';
+          qrImg.onerror = function() {
+            this.src = 'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodedUrl;
+            this.onerror = function() {
+              this.style.display = 'none';
+              var parent = this.parentElement;
+              var fb = document.createElement('div');
+              fb.className = 'w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-white/5 flex items-center justify-center text-gray-500';
+              fb.innerHTML = '<i data-lucide="qrcode" class="w-10 h-10"></i>';
+              parent.appendChild(fb);
+              if (lucide) lucide.createIcons();
+            };
+          };
+        }
+      }
+
+      // ============================================================
+      //  POPULATE FORM CATEGORIES
+      // ============================================================
+      function populateFormCategories() {
+        formCat.innerHTML = '<option value="">— Выберите направление —</option>';
+        appData.categories.forEach(function(cat) {
+          var opt = document.createElement('option');
+          opt.value = cat.id;
+          opt.textContent = cat.name;
+          formCat.appendChild(opt);
+        });
+      }
+
+      // ============================================================
+      //  SCROLL TO FORM (from product card)
+      // ============================================================
+      function scrollToForm(product) {
+        // set product name
+        formProduct.value = product.name;
+        var displaySpan = selectedProductDisplay.querySelector('span');
+        if (displaySpan) displaySpan.textContent = 'Выбран вид: ' + product.name;
+        selectedProductDisplay.classList.remove('hidden');
+
+        // try to set category
+        for (var i = 0; i < appData.categories.length; i++) {
+          for (var j = 0; j < appData.categories[i].products.length; j++) {
+            if (appData.categories[i].products[j].id === product.id) {
+              formCat.value = appData.categories[i].id;
+              break;
+            }
+          }
+        }
+
+        // scroll
+        var formSection = document.getElementById('order-form');
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // focus name field after a short delay
+          setTimeout(function() {
+            document.getElementById('form-name').focus();
+          }, 500);
+        }
+      }
+
+      // ============================================================
+      //  FORM HANDLER
+      // ============================================================
+      document.getElementById('order-form-element').addEventListener('submit', handleSubmit);
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        var nameInput = document.getElementById('form-name');
+        var phoneInput = document.getElementById('form-phone');
+        var nameError = document.getElementById('name-error');
+        var phoneError = document.getElementById('phone-error');
+        var submitBtn = document.getElementById('form-submit');
+
+        // reset errors
+        nameError.classList.add('hidden');
+        phoneError.classList.add('hidden');
+        nameInput.classList.remove('border-red-300');
+        phoneInput.classList.remove('border-red-300');
+
+        var isValid = true;
+
+        // validate name
+        var name = nameInput.value.trim();
+        if (!name) {
+          nameError.classList.remove('hidden');
+          nameInput.classList.add('border-red-300');
+          isValid = false;
+        }
+
+        // validate phone
+        var phone = phoneInput.value.trim();
+        var phonePattern = /^[\+\d\s\-\(\)]{10,20}$/;
+        if (!phone || !phonePattern.test(phone)) {
+          phoneError.classList.remove('hidden');
+          phoneInput.classList.add('border-red-300');
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // collect data
+        var formData = {
+          name: name,
+          phone: phone,
+          category: formCat.value,
+          categoryName: formCat.options[formCat.selectedIndex] ? formCat.options[formCat.selectedIndex].text : '',
+          product: formProduct.value.trim(),
+          timestamp: new Date().toISOString(),
+          source: window.location.href
+        };
+
+        // disable button
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Отправка...';
+        if (lucide) lucide.createIcons();
+
+        // simulate success
+        setTimeout(function() {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i> Отправить запрос';
+          if (lucide) lucide.createIcons();
+
+          // show modal
+          showModal();
+
+          // reset form
+          document.getElementById('order-form-element').reset();
+          formProduct.value = '';
+          selectedProductDisplay.classList.add('hidden');
+
+          // ============================================================
+          //  ПРИМЕР ОТПРАВКИ НА БЭКЕНД / ВЕБ-ФОРМЫ / TELEGRAM API
+          //  Раскомментируйте нужный вариант и подставьте свои данные:
+          // ============================================================
+
+          // --- ВАРИАНТ 1: fetch на собственный бэкенд ---
+          // fetch('/api/orders', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify(formData)
+          // })
+          // .then(function(res) {
+          //   if (!res.ok) throw new Error('Ошибка сервера');
+          //   return res.json();
+          // })
+          // .then(function(result) {
+          //   console.log('Заявка отправлена:', result);
+          // })
+          // .catch(function(err) {
+          //   console.error('Ошибка отправки:', err);
+          // });
+
+          // --- ВАРИАНТ 2: Web3Forms ---
+          // fetch('https://api.web3forms.com/submit', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({
+          //     access_key: 'ВАШ_КЛЮЧ_ДОСТУПА',
+          //     subject: 'Новая заявка с сайта Золотой телец',
+          //     from_name: 'Золотой телец',
+          //     ...formData
+          //   })
+          // })
+          // .then(function(res) { return res.json(); })
+          // .then(function(result) {
+          //   console.log('Web3Forms результат:', result);
+          // })
+          // .catch(function(err) {
+          //   console.error('Ошибка Web3Forms:', err);
+          // });
+
+          // --- ВАРИАНТ 3: Telegram Bot API ---
+          // var botToken = 'ВАШ_ТОКЕН_БОТА';
+          // var chatId = 'ВАШ_CHAT_ID';
+          // var message = '📩 *Новая заявка*\\n\\n' +
+          //   '*Имя:* ' + formData.name + '\\n' +
+          //   '*Телефон:* ' + formData.phone + '\\n' +
+          //   '*Направление:* ' + formData.categoryName + '\\n' +
+          //   '*Вид:* ' + formData.product + '\\n' +
+          //   '*Источник:* ' + formData.source;
+          // fetch('https://api.telegram.org/bot' + botToken + '/sendMessage', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({
+          //     chat_id: chatId,
+          //     text: message,
+          //     parse_mode: 'Markdown'
+          //   })
+          // })
+          // .then(function(res) { return res.json(); })
+          // .then(function(result) {
+          //   console.log('Telegram результат:', result);
+          // })
+          // .catch(function(err) {
+          //   console.error('Ошибка Telegram:', err);
+          // });
+
+          console.log('Данные заявки:', formData);
+        }, 1000);
+      }
+
+      // ============================================================
+      //  PRODUCT DETAIL MODAL
+      // ============================================================
+      var currentModalProduct = null;
+
+      function escHtml(text) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(text));
+        return d.innerHTML;
+      }
+
+      window.openProductModal = function(product, category) {
+        currentModalProduct = product;
+        var modal = document.getElementById('product-modal');
+        var title = document.getElementById('product-modal-title');
+        var image = document.getElementById('product-modal-image');
+        var desc = document.getElementById('product-modal-description');
+        var catEl = document.getElementById('product-modal-category');
+
+        catEl.textContent = category ? category.name : '';
+        title.textContent = product.name;
+        image.src = encodeURI(product.image);
+        image.alt = product.name;
+        image.onerror = function() { this.src = ''; this.alt = ''; this.style.display = 'none'; };
+
+        var html = '';
+
+        if (product.description) {
+          var paras = product.description.split('\n\n');
+          var descText = '';
+          paras.forEach(function(p) {
+            var t = p.trim();
+            if (t) descText += '<p class="mb-3 last:mb-0">' + escHtml(t) + '</p>';
+          });
+          html += '<div class="mb-5">' +
+            '<h4 class="text-xs font-semibold text-brand-500 uppercase tracking-wider mb-2">Описание</h4>' +
+            descText +
+            '</div>';
+        }
+
+        if (product.specs && product.specs.length) {
+          html += '<div class="mb-5">' +
+            '<h4 class="text-xs font-semibold text-brand-500 uppercase tracking-wider mb-2">Технические характеристики</h4>' +
+            '<ul class="space-y-1">';
+          product.specs.forEach(function(s) {
+            html += '<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-400 mt-1.5 shrink-0"></span><span>' + escHtml(s) + '</span></li>';
+          });
+          html += '</ul></div>';
+        }
+
+        if (category && category.applications && category.applications.length) {
+          html += '<div class="mb-5">' +
+            '<h4 class="text-xs font-semibold text-brand-500 uppercase tracking-wider mb-2">Применение</h4>' +
+            '<ul class="space-y-1">';
+          category.applications.forEach(function(a) {
+            html += '<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-400 mt-1.5 shrink-0"></span><span>' + escHtml(a) + '</span></li>';
+          });
+          html += '</ul></div>';
+        }
+
+        desc.innerHTML = html || 'Нет описания';
+
+        modal.classList.remove('hidden');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        if (lucide) lucide.createIcons();
+      };
+
+      window.closeProductModal = function() {
+        var modal = document.getElementById('product-modal');
+        modal.style.display = 'none';
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      };
+
+      window.openLightbox = function(src, alt) {
+        var lb = document.getElementById('image-lightbox');
+        var img = document.getElementById('lightbox-image');
+        img.src = src;
+        img.alt = alt || '';
+        lb.classList.remove('hidden');
+        lb.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        if (lucide) lucide.createIcons();
+      };
+
+      window.closeLightbox = function() {
+        var lb = document.getElementById('image-lightbox');
+        lb.style.display = 'none';
+        lb.classList.add('hidden');
+        document.body.style.overflow = '';
+      };
+
+      window.scrollToFormFromModal = function() {
+        closeProductModal();
+        if (currentModalProduct) {
+          scrollToForm(currentModalProduct);
+        }
+      };
+
+      // close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          var pm = document.getElementById('product-modal');
+          if (pm && pm.style.display === 'flex') {
+            closeProductModal();
+          }
+        }
+      });
+
+      // ============================================================
+      //  MODAL (success)
+      // ============================================================
+      function showModal() {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        if (lucide) lucide.createIcons();
+      }
+
+      window.hideModal = function() {
+        modal.style.display = 'none';
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      };
+
+      // close modal on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          hideModal();
+        }
+      });
+
+      // ============================================================
+      //  UPDATE COPYRIGHT YEAR
+      // ============================================================
+      var yearEls = document.querySelectorAll('[data-year]');
+      yearEls.forEach(function(el) { el.textContent = new Date().getFullYear(); });
+    });
+  </script>
+</body>
+</html>
